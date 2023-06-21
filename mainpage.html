@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .post-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-header .username {
+            font-weight: bold;
+        }
+
+        .post-image {
+            max-width: 100%;
+        }
+
+        .post-actions {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .post-actions .icon {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .post-actions .likes {
+            font-weight: bold;
+        }
+
+        .post-actions .comment-input {
+            flex-grow: 1;
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .post-actions .comment-input:focus {
+            outline: none;
+            border-color: #777;
+        }
+
+        .post-comments {
+            margin-top: 10px;
+        }
+
+        .post-comments .comment {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                text-align: center;
+            }
+
+            .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .post-header img {
+                margin-bottom: 10px;
+            }
+
+            .post-actions {
+                justify-content: flex-start;
+            }
+
+            .post-actions .comment-input {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instagram</h1>
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <div class="post-header">
+                <img src="images/user1.jpg" alt="User 1">
+                <span class="username">user1</span>
+            </div>
+            <img class="post-image" src="images/post1.jpg" alt="Post 1">
+            <div class="post-actions">
+                <span class="icon like" onclick="toggleLike(this)">❤️</span>
+                <span class="likes">500 likes</span>
+                <span class="icon share" onclick="sharePost()">📤</span>
+                <input type="text" class="comment-input" placeholder="Add a comment...">
+            </div>
+            <div class="post-comments">
+                <div class="comment">
+                    <span class="username">user2:</span> Nice photo!
+                </div>
+                <div class="comment">
+                    <span class="username">user3:</span> Love it! ❤️
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <img src="images/user2.jpg" alt="User 1">
+                <span class="username">user1</span>
+            </div>
+            <img class="post-image" src="images/post2.jpg" alt="Post 1">
+            <div class="post-actions">
+                <span class="icon like" onclick="toggleLike(this)">❤️</span>
+                <span class="likes">500 likes</span>
+                <span class="icon share" onclick="sharePost()">📤</span>
+                <input type="text" class="comment-input" placeholder="Add a comment...">
+            </div>
+            <div class="post-comments">
+                <div class="comment">
+                    <span class="username">user2:</span> Nice photo!
+                </div>
+                <div class="comment">
+                    <span class="username">user3:</span> Love it! ❤️
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-header">
+                <img src="images/user3.jpg" alt="User 1">
+                <span class="username">user1</span>
+            </div>
+            <img class="post-image" src="images/post3.jpg" alt="Post 1">
+            <div class="post-actions">
+                <span class="icon like" onclick="toggleLike(this)">❤️</span>
+                <span class="likes">500 likes</span>
+                <span class="icon share" onclick="sharePost()">📤</span>
+                <input type="text" class="comment-input" placeholder="Add a comment...">
+            </div>
+            <div class="post-comments">
+                <div class="comment">
+                    <span class="username">user2:</span> Nice photo!
+                </div>
+                <div class="comment">
+                    <span class="username">user3:</span> Love it! ❤️
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLike(element) {
+            element.classList.toggle("liked");
+        }
+
+        function sharePost() {
+            alert("Post shared!");
+        }
+    </script>
+</body>
+</html>
